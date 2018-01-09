@@ -1,5 +1,6 @@
 (ns dev-tools.nrepl
-  (:require [clojure.tools.nrepl.server :as nrepl-server]))
+  (:require [clojure.tools.nrepl.server :as nrepl-server]
+            [clojure.java.io :as io]))
 
 ; Supported middlewares
 
@@ -43,7 +44,14 @@
       (clojure.tools.nrepl.server/default-handler)
       (first handlers))))
 
+(defn create-nrepl-port-file
+  [port]
+  (let [nrepl-port-file (io/file ".nrepl-port")]
+    (spit nrepl-port-file (str port))
+    (.addShutdownHook (Runtime/getRuntime)
+                      (Thread. #(io/delete-file nrepl-port-file true)))))
 (defn -main []
-  (let [server (nrepl-server/start-server :handler ((nrepl-middlewares) (nrepl-handler)))]
-    (println "nrepl server started at port" (:port server))
-    (spit ".nrepl-port" (str (:port server)))))
+  (let [{port :port}
+        (nrepl-server/start-server :handler ((nrepl-middlewares) (nrepl-handler)))]
+    (println "nrepl server started at port" port)
+    (create-nrepl-port-file port)))
