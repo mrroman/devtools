@@ -1,5 +1,7 @@
 {:deps
- {org.clojure/tools.nrepl {:mvn/version "0.2.12"}}
+ {org.clojure/tools.nrepl {:mvn/version "0.2.12"}
+  circleci/circleci.test {:mvn/version "0.3.1"}}
  :aliases
  {:cider {:extra-deps {cider/cider-nrepl {:mvn/version "0.16.0"}
-                       refactor-nrepl {:mvn/version "2.3.1"}}}}}
+                       refactor-nrepl {:mvn/version "2.3.1"}}}
+  :test {:extra-paths ["test"]}}}
