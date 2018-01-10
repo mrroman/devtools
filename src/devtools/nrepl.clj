@@ -1,4 +1,4 @@
-(ns dev-tools.nrepl
+(ns devtools.nrepl
   (:require [clojure.tools.nrepl.server :as nrepl-server]
             [clojure.java.io :as io]))
 
