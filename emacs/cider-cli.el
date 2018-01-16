@@ -1,4 +1,6 @@
-;;; cider-cli -- use cider with .nrepl-port file
+;;; cider-cli -- use Cider with Clojure CLI
+;;;
+;;; See https://github.com/mrroman/devtools
 ;;;
 ;;; Commentary:
 ;;; Code:

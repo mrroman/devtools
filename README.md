@@ -41,7 +41,7 @@ clojure -R:devtools -m devtools.nrepl
 
 I also added Emacs module that allows to automatically set up the server and start the Cider session. Projectile is required to work.
 
-1. Download https://raw.githubusercontent.com/mrroman/devtools/master/emacs/cider-el.cl to `~/.emacs.d/lisp` directory.
+1. Download [cider-cli.el](https://raw.githubusercontent.com/mrroman/devtools/master/emacs/cider-cli.el) to `~/.emacs.d/lisp` directory.
 1. Append this snippet to the `.emacs` or `.emacs.d/init.el` file (I'll deploy this package to MELPA repository soon).
 
     ```lisp
