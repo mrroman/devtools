@@ -46,7 +46,7 @@ I also added Emacs module that allows to automatically set up the server and sta
 
     ```lisp
     (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
-    (require 'cider-ci)
+    (require 'cider-cli)
     ```
 
 Now you can start the session with `cider-jack-in-cli` command.
